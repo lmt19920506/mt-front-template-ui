@@ -1,0 +1,72 @@
+{
+  "id": "2736945",
+  "name": "show-ui",
+  "font_family": "iconfont",
+  "css_prefix_text": "show-",
+  "description": "show-ui图标库",
+  "glyphs": [
+    {
+      "icon_id": "5203295",
+      "name": "缩小",
+      "font_class": "suoxiao",
+      "unicode": "e633",
+      "unicode_decimal": 58931
+    },
+    {
+      "icon_id": "7275361",
+      "name": "Fullscreen",
+      "font_class": "Fullscreen",
+      "unicode": "e68c",
+      "unicode_decimal": 59020
+    },
+    {
+      "icon_id": "14112202",
+      "name": "full",
+      "font_class": "full",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "129224",
+      "name": "table",
+      "font_class": "table",
+      "unicode": "e894",
+      "unicode_decimal": 59540
+    },
+    {
+      "icon_id": "4513243",
+      "name": "编辑器",
+      "font_class": "bianjiqi",
+      "unicode": "e72e",
+      "unicode_decimal": 59182
+    },
+    {
+      "icon_id": "11537945",
+      "name": "dash-board",
+      "font_class": "dash-board",
+      "unicode": "e664",
+      "unicode_decimal": 58980
+    },
+    {
+      "icon_id": "18379488",
+      "name": "设 置",
+      "font_class": "shezhi",
+      "unicode": "e696",
+      "unicode_decimal": 59030
+    },
+    {
+      "icon_id": "20981666",
+      "name": "form",
+      "font_class": "form",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "22906384",
+      "name": "other",
+      "font_class": "other",
+      "unicode": "e69a",
+      "unicode_decimal": 59034
+    }
+  ]
+}

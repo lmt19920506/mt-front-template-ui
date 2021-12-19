@@ -1,0 +1,75 @@
+.layout-row {
+  margin:  0;
+  .row-controller-bar {
+    background-color: #cccccc;
+    color: black;
+    justify-content: space-between;
+    height: 28px;
+    line-height: 28px;
+    top: -28px;
+    .bar-info-box {
+      max-width: 40%;
+      .bar-layout-info {
+        margin: 0 0.5rem;
+      }
+    }
+    .bar-btn-box {
+      .align-type-item {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+
+  .layout-col-box {
+    background-size: 100%;
+    background-position: center center;
+    border: 1px dashed #cccccc;
+    margin: 0 0.1rem;
+    .col-controller-bar {
+      height: 20px;
+      line-height: 20px;
+      background-color: #cccccc;
+      color: black;
+      top: 0;
+      justify-content: space-between;
+      .bar-title-box {
+        margin: 0 0.5rem;
+        max-width: 35%;
+      }
+    }
+  }
+}
+
+.ps-icon-btn {
+  transition: top 0.5s;
+  font-size: 2.5rem;
+  &.add-row-icon {
+    left: 7%;
+    z-index: 998;
+    &:hover {
+      animation: transIcon 1s infinite;
+    }
+  }
+  &.add-col-icon {
+    right: 7%;
+    z-index: 998;
+    &:hover {
+      animation: transIconReversal 1s infinite;
+    }
+  }
+  &.preview-icon {
+    right: 5%;
+  }
+}
+// 左边
+.leftMenuContainer {
+  background: #ffffff;
+  z-index: 999;
+}
+// 右边
+.rightMenuContainer {
+  z-index: 999;
+  width: 400px;
+  height: 800px;
+  background: #cccccc;
+}

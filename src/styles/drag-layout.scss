@@ -1,0 +1,19 @@
+.ps-icon-btn {
+  transition: top 0.5s;
+  font-size: 2.5rem;
+  &.add-row-icon {
+    left: 8%;
+    &:hover {
+      animation: transIcon 1s infinite;
+    }
+  }
+  &.add-col-icon {
+    right: 8%;
+    &:hover {
+      animation: transIconReversal 1s infinite;
+    }
+  }
+  &.preview-icon {
+    right: 5%;
+  }
+}
