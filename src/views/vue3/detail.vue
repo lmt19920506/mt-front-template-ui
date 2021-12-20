@@ -7,7 +7,7 @@ import {defineComponent, getCurrentInstance} from '@vue/composition-api'
 export default defineComponent({
   setup() {
     const show = () => {
-      console.log('show')
+      // console.log('show')
     }
     const {proxy} = getCurrentInstance()
     console.log('proxy---', proxy.$route)
