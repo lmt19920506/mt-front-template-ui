@@ -23,7 +23,7 @@ const commonRoutes = [
       {
         path: '/dashboard',
         name: 'Dashboard',
-        component: () => import('@/views/dashboard')
+        component: () => import(/* webpackChunkName: dashboard */ '@/views/dashboard')
       },
       {
         path: '/dataview',
@@ -41,7 +41,7 @@ const commonRoutes = [
   {
     path: '/login',
     name: 'login',
-    component: () => import('@/views/login/login')
+    component: () => import(/* webpackChunkName: 'Login' */ '@/views/login/login')
   },
   {
     path: '/403',

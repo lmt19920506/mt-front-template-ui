@@ -47,3 +47,22 @@ export function isEmptyObject(obj) {
   if (!obj || typeof obj !== "object" || Array.isArray(obj)) return false;
   return !Object.keys(obj).length;
 }
+
+/**
+ * 保留指定的小数位
+ * toFixed(25.198726354, 1);       // 25.1
+toFixed(25.198726354, 2);       // 25.19
+toFixed(25.198726354, 3);       // 25.198
+toFixed(25.198726354, 4);       // 25.1987
+toFixed(25.198726354, 5);       // 25.19872
+toFixed(25.198726354, 6);       // 25.198726
+ */
+export function toFixed(number, fixed) {
+  return (Math.pow(10, fixed) * number) / Math.pow(10, fixed) 
+}
+
+/**
+ * 获取所有参数的平均值
+ * average(1, 2, 3, 4)
+ */
+export const average = (...args) => args.reduce((a, b) => a + b) / args.length

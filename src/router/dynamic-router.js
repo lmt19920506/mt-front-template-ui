@@ -1,48 +1,48 @@
 // import Layout from '@/views/Main'
 
 /*table*/
-const Table = () => import("@/views/table");
-const TableAutoScroll = () => import("@/views/table/tableAutoScroll");
-const ShowTable = () => import("@/views/table/showTable");
+const Table = () => import(/* webpackChunkName: 'Table' */"@/views/table");
+const TableAutoScroll = () => import(/* webpackChunkName: 'Table' */ "@/views/table/tableAutoScroll");
+const ShowTable = () => import(/* webpackChunkName: 'Table' */ "@/views/table/showTable");
 // const ShowTableDetail = () => import("@/views/table/showTableDetail")
-const Sortable = () => import('@/views/table/sortable')
-const TableFilter = () => import('@/views/table/tableFilter')
-const TableMergeRow = () => import('@/views/table/tableMergeRow')
+const Sortable = () => import(/* webpackChunkName: 'Table' */ '@/views/table/sortable')
+const TableFilter = () => import(/* webpackChunkName: 'Table' */ '@/views/table/tableFilter')
+const TableMergeRow = () => import(/* webpackChunkName: 'Table' */ '@/views/table/tableMergeRow')
 
 /*bpmn */
-const Bpmn = () => import("@/views/bpmn");
-const BpmnInit = () => import("@/views/bpmn/bpmn-init");
-const BpmnHttp = () => import("@/views/bpmn/bpmn-http");
-const BpmnEvent = () => import("@/views/bpmn/bpmn-event");
+const Bpmn = () => import(/* webpackChunkName: 'Bpmn' */ "@/views/bpmn");
+const BpmnInit = () => import(/* webpackChunkName: 'Bpmn' */ "@/views/bpmn/bpmn-init");
+const BpmnHttp = () => import(/* webpackChunkName: 'Bpmn' */ "@/views/bpmn/bpmn-http");
+const BpmnEvent = () => import(/* webpackChunkName: 'Bpmn' */ "@/views/bpmn/bpmn-event");
 
 /*editor编辑器 */
-const Editor = () => import("@/views/editor");
-const CodeMirror = () => import("@/views/editor/codeMirror");
-const Tinymce = () => import("@/views/editor/tinymce/tinymce");
-const VueQillEditor = () => import("@/views/editor/vue-quill-editor");
-const MonacoEditorVue = () => import('@/views/editor/monaco-editor-vue')
+const Editor = () => import(/* webpackChunkName: 'Editor' */ "@/views/editor");
+const CodeMirror = () => import(/* webpackChunkName: 'Editor' */ "@/views/editor/codeMirror");
+const Tinymce = () => import(/* webpackChunkName: 'Editor' */ "@/views/editor/tinymce/tinymce");
+const VueQillEditor = () => import(/* webpackChunkName: 'Editor' */ "@/views/editor/vue-quill-editor");
+const MonacoEditorVue = () => import(/* webpackChunkName: 'Editor' */ '@/views/editor/monaco-editor-vue')
 
 /**动态表单 */
-const DynamicForm = () => import('../../packages/dynamicForm/index.vue');
-const FormCreate = () => import('@/views/form-create/form-create')
+const DynamicForm = () => import(/* webpackChunkName: 'DynamicForm' */ '../../packages/dynamicForm/index.vue');
+const FormCreate = () => import(/* webpackChunkName: 'DynamicForm' */ '@/views/form-create/form-create')
 /**图片展示插件 viewerjs */
-const ShowPicture = () => import('@/views/viewerjs/index')
+const ShowPicture = () => import(/* webpackChunkName: 'ShowPicture' */ '@/views/viewerjs/index')
 
 /*other* */
-const Other = () => import('@/views/other')
-const dynamicComponent = () => import('@/views/other/dynamicComponent/index.vue')
-const Vue3Test = () => import('@/views/vue3')
+const Other = () => import(/* webpackChunkName: 'Other' */ '@/views/other')
+const dynamicComponent = () => import(/* webpackChunkName: 'Other' */ '@/views/other/dynamicComponent/index.vue')
+const Vue3Test = () => import(/* webpackChunkName: 'Other' */ '@/views/vue3')
 
 /*drag layout */
-const DragLayout = () => import('@/views/dragLayout')
+const DragLayout = () => import(/* webpackChunkName: 'DragLayout' */ '@/views/dragLayout')
 
-const ResizeWidth = () => import('@/views/resize')
+const ResizeWidth = () => import(/* webpackChunkName: 'DragLayout' */ '@/views/resize')
 
 /*show tree */
-const ShowTree = () => import('@/views/tree/index.vue')
+const ShowTree = () => import(/* webpackChunkName: 'Tree' */ '@/views/tree/index.vue')
 
 /*jsx 页面 */
-const Jsx = () => import('@/views/jsx/index.vue')
+const Jsx = () => import(/* webpackChunkName: 'Jsx' */ '@/views/jsx/index.vue')
 
 /*需要权限判断的路由 */
 const dynamicRoutes = [

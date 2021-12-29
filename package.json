@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "analyz": "NODE_ENV=production npm_config_report=true npm run build",
     "lint": "vue-cli-service lint",
     "lib": "vue-cli-service build --target lib --name show-ui --dest lib packages/index.js",
     "build:lib": "cross-env NODE_ENV=production BuildTarget=lib vue-cli-service build --target lib --name show-ui --dest lib packages/index.js"
@@ -40,19 +41,22 @@
     "vuex": "^3.4.0"
   },
   "devDependencies": {
+    "@types/ace": "0.0.42",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-vuex": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
-    "@types/ace": "0.0.42",
     "babel-eslint": "^10.1.0",
+    "compression-webpack-plugin": "^2.0.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11",
-    "cross-env": "^7.0.2",
     "html-webpack-plugin": "3.2.0",
     "node-sass": "^4.12.0",
-    "sass-loader": "^8.0.2"
+    "sass-loader": "^8.0.2",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }

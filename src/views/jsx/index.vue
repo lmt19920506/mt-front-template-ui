@@ -11,7 +11,7 @@
 <script>
 import childOne from './jsx/child1'
 import childTwo from './jsx/child2'
-import {buttonCounter} from './jsx/jsxData'
+import {buttonCounter} from './jsx/jsxData.jsx'
 export default {
   mounted() {
     console.log('buttonCounter---', buttonCounter)
