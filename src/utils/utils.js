@@ -38,6 +38,16 @@ export function isType(data, type) {
 }
 
 /**
+ * 判断类型
+ */
+export function myTypeOf(data) {
+  return Object.prototype.toString
+    .call(data)
+    .slice(8, -1)
+    .toLowerCase();
+}
+
+/**
  * @desc 判断obj是否为空
  * @param {Object} obj
  * @return {Boolean}
@@ -58,11 +68,25 @@ toFixed(25.198726354, 5);       // 25.19872
 toFixed(25.198726354, 6);       // 25.198726
  */
 export function toFixed(number, fixed) {
-  return (Math.pow(10, fixed) * number) / Math.pow(10, fixed) 
+  return (Math.pow(10, fixed) * number) / Math.pow(10, fixed);
 }
 
 /**
  * 获取所有参数的平均值
  * average(1, 2, 3, 4)
  */
-export const average = (...args) => args.reduce((a, b) => a + b) / args.length
+export const average = (...args) => args.reduce((a, b) => a + b) / args.length;
+
+/**
+ * 数组对象去重(通过对象hasOwnProperty())
+ * arr: 数组
+ * key: 根据那个字段去重
+ */
+export default function removeSame(arr, key) {
+  const res = {};
+  return arr.filter(item => {
+    // console.log("log---", res[item[key]]);
+    // return !res.hasOwnProperty(item[key]) && (res[item[key]] = 1);
+    return !Object.prototype.hasOwnProperty.call(res, item[key]) && (res[item[key]] = 1)
+  });
+}
