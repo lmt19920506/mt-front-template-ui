@@ -77,16 +77,3 @@ export function toFixed(number, fixed) {
  */
 export const average = (...args) => args.reduce((a, b) => a + b) / args.length;
 
-/**
- * 数组对象去重(通过对象hasOwnProperty())
- * arr: 数组
- * key: 根据那个字段去重
- */
-export default function removeSame(arr, key) {
-  const res = {};
-  return arr.filter(item => {
-    // console.log("log---", res[item[key]]);
-    // return !res.hasOwnProperty(item[key]) && (res[item[key]] = 1);
-    return !Object.prototype.hasOwnProperty.call(res, item[key]) && (res[item[key]] = 1)
-  });
-}

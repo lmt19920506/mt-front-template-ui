@@ -1,6 +1,6 @@
 <template>
   <div class="box-container">
-    <p>自定义表头</p>
+   <p>自定义表头</p>
     <el-table :data="tableData" size="mini" border stripe="">
       <el-table-column
         label="name"
@@ -44,12 +44,46 @@
       <el-table-column prop="amount2" label="数值 2（元）"> </el-table-column>
       <el-table-column prop="amount3" label="数值 3（元）"> </el-table-column>
     </el-table>
+    <div style="padding: 10px">
+      <el-card>
+        <form1 ref="form1"></form1>
+      </el-card>
+      <el-card>
+        <form2 ref="form2"></form2>
+      </el-card>
+      <el-card>
+        <form3 ref="form3"></form3>
+      </el-card>
+      <el-card>
+        <form4 ref="form4"></form4>
+      </el-card>
+      <el-card>
+        <form5 ref="form5"></form5>
+      </el-card>
+      <el-card>
+        <form6 ref="form6"></form6>
+      </el-card>
+      <el-card>
+        <form7 ref="form7"></form7>
+      </el-card>
+    </div>
+    <el-button type="primary" @click="validate">submit</el-button>
   </div>
 </template>
 
 <script>
+import form1 from './validateForm/form1'
+import form2 from './validateForm/form2'
+import form3 from './validateForm/form3'
+import form4 from './validateForm/form4'
+import form5 from './validateForm/form5'
+import form6 from './validateForm/form6'
+import form7 from './validateForm/form7'
 /* eslint-disable */
 export default {
+  components: {
+    form1, form2, form3, form4, form5, form6, form7
+  },
   data() {
     return {
       isShowDialog: false,
@@ -166,6 +200,24 @@ export default {
       //   }
       // }
     },
+    async validate() {
+      const vailRefs = [
+        this.$refs.form1,
+        this.$refs.form2,
+        this.$refs.form3,
+        this.$refs.form4,
+        this.$refs.form5,
+        this.$refs.form6,
+        this.$refs.form6,
+      ];
+      for (const i in vailRefs) {
+        const res = await vailRefs[i]?.validate();
+        if (!res) {
+          return false;
+        }
+      }
+      return true;
+    }
   },
 };
 </script>

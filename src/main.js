@@ -9,11 +9,14 @@ import '@/styles/var.scss'
 import '@/styles/drag-layout.scss'
 import 'element-ui/lib/theme-chalk/index.css';
 import dataV from '@jiaminghi/data-view'  // 引入data-view
+import { scrollToError } from '@/utils/dom.js'
+Vue.prototype.$scrollToError = scrollToError
 
 import VueCompositionAPI from '@vue/composition-api'
 
 import formCreate from '@form-create/element-ui'
 Vue.use(formCreate)
+
 
 import _ from 'lodash';
 Vue.prototype._ = _;
@@ -37,6 +40,9 @@ Vue.use(VueCompositionAPI)
 
 import monacoInstall from '@/components/MonacoEditor/index.js'
 Vue.use(monacoInstall)
+
+import mtForm from 'js-draggable-dynamic-form'
+Vue.use(mtForm)
 
 new Vue({
   router,

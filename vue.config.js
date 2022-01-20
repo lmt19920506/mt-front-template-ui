@@ -1,7 +1,7 @@
 // gzip压缩   npm install --save-dev compression-webpack-plugin
 const CompressionWebpackPlugin = require("compression-webpack-plugin"); //引入插件
 //压缩代码并去掉console   
-const UglifyJsPlugin = require("uglifyjs-webpack-plugin");  // npm install uglifyjs-webpack-plugin --save-dev
+// const UglifyJsPlugin = require("uglifyjs-webpack-plugin");  // npm install uglifyjs-webpack-plugin --save-dev
 
 const isProduction = process.env.NODE_ENV === 'production'
 const externals = {
@@ -35,12 +35,12 @@ module.exports = {
   // },
   chainWebpack: (config) => {
     // config.plugin("webpack-bundle-analyzer").use(require("webpack-bundle-analyzer").BundleAnalyzerPlugin);
-    config.optimization.minimize(true); // 压缩代码
+    // config.optimization.minimize(true); // 压缩代码
 
-    config.optimization.splitChunks({
-      // 分割代码
-      chunks: "all",
-    });
+    // config.optimization.splitChunks({
+    //   // 分割代码
+    //   chunks: "all",
+    // });
     config.plugin('html').tap(args => {
       if (isProduction) {
         args[0].cdn = cdn
@@ -115,20 +115,20 @@ module.exports = {
       config.externals = externals
     }
     // 启用代码压缩
-    plugins.push(
-      new UglifyJsPlugin({
-        uglifyOptions: {
-          compress: {
-            drop_console: true,
-            drop_debugger: false,
-            pure_funcs: ["console.log"] //移除console
-          },
-          warnings: false,
-        },
-        sourceMap: false,
-        parallel: true
-      })
-    )
+    // plugins.push(
+    //   new UglifyJsPlugin({
+    //     uglifyOptions: {
+    //       compress: {
+    //         drop_console: true,
+    //         drop_debugger: false,
+    //         pure_funcs: ["console.log"] //移除console
+    //       },
+    //       warnings: false,
+    //     },
+    //     sourceMap: false,
+    //     parallel: true
+    //   })
+    // )
     // gzip压缩
     plugins.push(
       new CompressionWebpackPlugin({

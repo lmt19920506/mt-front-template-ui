@@ -1,14 +1,16 @@
 <template>
   <div class="box-container">
-    <child-one :typeSpan="typeSpan"></child-one>
+    <!-- <child-one :typeSpan="typeSpan"></child-one>
     <el-divider></el-divider>
     <child-two></child-two>
     <el-divider></el-divider>
-    <el-button @click="add">合并对象</el-button>
+    <el-button @click="add">合并对象</el-button> -->
+    <FormDesign />
   </div>
 </template>
 
 <script>
+/*eslint-disable */
 import childOne from './jsx/child1'
 import childTwo from './jsx/child2'
 import {buttonCounter} from './jsx/jsxData.jsx'

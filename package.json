@@ -24,6 +24,7 @@
     "core-js": "^3.6.5",
     "echarts": "^4.9.0",
     "element-ui": "^2.15.4",
+    "js-draggable-dynamic-form": "^0.1.1",
     "lodash": "^4.17.21",
     "monaco-editor": "^0.22.3",
     "monaco-editor-vue": "^1.0.10",
