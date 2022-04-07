@@ -27,7 +27,7 @@ export default {
     login() {
       // this.$store.commit('addMenu', this.$router)
       axios.get('https://service.homepartners.dev/sso/.well-known/openid-configuration').then(res => {
-        console.log('login---',res)
+        // console.log('login---',res)
       })
       axios.get(`https://gateway.homepartners.dev/permissionapi/permissions`).then(res => {
         console.log('permission---', res)
