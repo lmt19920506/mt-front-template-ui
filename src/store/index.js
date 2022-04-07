@@ -69,7 +69,8 @@ export default new Vuex.Store({
         'draglayout',
         'resize',
         'vue3Test',
-        'formCreate'
+        'formCreate',
+        'Calendar'
       ];
       const other = ["table","tableAutoScroll"]
       const routes = recursionRouter(userList, dynamicRouter)

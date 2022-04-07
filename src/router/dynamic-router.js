@@ -44,6 +44,9 @@ const ShowTree = () => import(/* webpackChunkName: 'Tree' */ '@/views/tree/index
 /*jsx 页面 */
 const Jsx = () => import(/* webpackChunkName: 'Jsx' */ '@/views/jsx/index.vue')
 
+/*vue-calendar-component 日历插件 */
+const Calendar = () => import(/* webpackChunkName: 'Calendar' */ '@/views/calendar/index.vue')
+
 /*需要权限判断的路由 */
 const dynamicRoutes = [
   {
@@ -89,7 +92,8 @@ const dynamicRoutes = [
     { path: '/vue3Test', name: 'vue3Test', component: Vue3Test, meta: {name: 'vue3 test'} }
   ] },
   { path: '/showTree', name: 'showTree', component: ShowTree, meta: {name: 'Show Tree', icon: 'el-icon-s-platform'} },
-  { path: '/jsx', name: 'Jsx', component: Jsx, meta: {name: 'JSX', icon: 'el-icon-s-platform'} }
+  { path: '/jsx', name: 'Jsx', component: Jsx, meta: {name: 'JSX', icon: 'el-icon-s-platform'} },
+  { path: '/calendar', name: 'Calendar', component: Calendar, meta: {name: 'Calendar', icon: 'el-icon-s-platform'} }
 ];
 
 export default dynamicRoutes

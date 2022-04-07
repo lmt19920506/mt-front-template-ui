@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 export default {
   data() {
     return {
@@ -25,15 +25,15 @@ export default {
   },
   methods: {
     login() {
-      // this.$store.commit('addMenu', this.$router)
-      axios.get('https://service.homepartners.dev/sso/.well-known/openid-configuration').then(res => {
-        // console.log('login---',res)
-      })
-      axios.get(`https://gateway.homepartners.dev/permissionapi/permissions`).then(res => {
-        console.log('permission---', res)
-      })
-      // console.log("$router---", this.$router)
-      // this.$router.push('/')
+      this.$store.commit('addMenu', this.$router)
+      // axios.get('https://service.homepartners.dev/sso/.well-known/openid-configuration').then(res => {
+      //   console.log('login---',res)
+      // })
+      // axios.get(`https://gateway.homepartners.dev/permissionapi/permissions`).then(res => {
+      //   console.log('permission---', res)
+      // })
+      console.log("$router---", this.$router)
+      this.$router.push('/')
     }
   }
 }
