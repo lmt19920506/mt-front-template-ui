@@ -104,7 +104,7 @@ export default {
   },
   mounted() {
     console.log("rightData---", rightData);
-    console.log("this---", this);
+    // console.log("this---", this);
     const { options } = this;
     this.componentDatas = rightData;
     options.heightOptions = mapPropAndSortAndDup("height", rightData);
