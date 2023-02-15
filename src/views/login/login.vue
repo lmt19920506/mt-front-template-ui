@@ -18,27 +18,32 @@ export default {
   data() {
     return {
       form: {
-        username: 'admin',
-        password: '123'
-      }
-    }
+        username: "admin",
+        password: "123",
+      },
+    };
   },
   methods: {
     login() {
-      this.$store.commit('addMenu', this.$router)
+      this.$store.commit("addMenu", this.$router);
       // axios.get('https://service.homepartners.dev/sso/.well-known/openid-configuration').then(res => {
       //   console.log('login---',res)
       // })
       // axios.get(`https://gateway.homepartners.dev/permissionapi/permissions`).then(res => {
       //   console.log('permission---', res)
       // })
-      console.log("$router---", this.$router)
-      this.$router.push('/')
-    }
-  }
-}
+      localStorage.setItem("token", this.form.username);
+      // console.log("$router---", this.$route);
+      const redirect = this.$route.query.redirect;
+      if (redirect) {
+        this.$router.push(redirect);
+      } else {
+        this.$router.push("/");
+      }
+    },
+  },
+};
 </script>
 
 <style>
-
 </style>

@@ -92,7 +92,7 @@ const dynamicRoutes = [
     { path: '/vue3Test', name: 'vue3Test', component: Vue3Test, meta: {name: 'vue3 test'} }
   ] },
   { path: '/showTree', name: 'showTree', component: ShowTree, meta: {name: 'Show Tree', icon: 'el-icon-s-platform'} },
-  { path: '/jsx', name: 'Jsx', component: Jsx, meta: {name: 'JSX', icon: 'el-icon-s-platform'} },
+  { path: '/jsx', name: 'Jsx', component: Jsx, meta: {name: 'JSX', icon: 'el-icon-s-platform', requireAuth: true} },
   { path: '/calendar', name: 'Calendar', component: Calendar, meta: {name: 'Calendar', icon: 'el-icon-s-platform'} }
 ];
 
