@@ -1,114 +1,97 @@
 <template>
-  <div>
-    <div id="box" :style="{ height: divHeight + 'px' }">
-      <div id="left">
-        1111111111
-      </div>
-      <div id="resize"></div>
-      <div id="right">
-        22222222222
-      </div>
-    </div>
+  <div class="app-container caseManagementIndex scrollcontainer scrollcontainer_auto" ref="caseManagementIndex">
+    <el-select v-model="labelData" placeholder="请选择">
+      <el-option :value="selectTree" class="setstyle" disabled>
+        <el-tree :data="list" :props="defaultProps" ref="tree" :highlight-current="true" @node-click="handleNodeClick" default-expand-all></el-tree>
+      </el-option>
+    </el-select>
   </div>
 </template>
 
 <script>
 /*eslint-disable */
 export default {
+  name: "caseManagementIndex",
+  // import引入的组件需要注入到对象中才能使用PopupTreeInput
+  components: {},
+  props: [""],
   data() {
+    // 这里存放数据
     return {
-      screenWidth: window.innerWidth,
-      screenHeight: window.innerHeight,
-      divHeight: window.innerHeight - 110,
+      labelData: "",
+      valueData:"",
+      selectTree: [],
+      defaultProps: {
+        children: 'children',
+        label: 'label'
+      },
+      list: [{
+        id: 1,
+        label: '一级 2',
+        children: [{
+          id: 3,
+          label: '二级 2-1',
+          children: [{
+            id: 4,
+            label: '三级 3-1-1'
+          }, {
+            id: 5,
+            label: '三级 3-1-2',
+          }]
+        }, {
+          id: 2,
+          label: '二级 2-2',
+          children: [{
+            id: 6,
+            label: '三级 3-2-1'
+          }, {
+            id: 7,
+            label: '三级 3-2-2',
+          }]
+        }]
+      }],
     };
   },
-  created() {
-    this.divHeight = window.innerHeight - 110;
-  },
+  // 监听属性 类似于data概念
+  computed: {},
+  // 监控data中的数据变化
+  watch: {},
+  // 生命周期 - 创建完成（可以访问当前this实例）
+  created() { },
+  // 生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {
-    this.dragControllerDiv();
-    this.screenWidth = document.body.clientWidth;
-    this.screenHeight = document.body.clientHeight;
-    window.onresize = () => {
-      return (() => {
-        this.screenWidth = document.body.clientWidth;
-        this.screenHeight = document.body.clientHeight;
-      })();
-    };
+    // console.log("flatten(fromData)", this.flatten(this.list));
   },
+  // 方法集合
   methods: {
-    dragControllerDiv() {
-      let resize = document.getElementById("resize");
-      let left = document.getElementById("left");
-      let right = document.getElementById("right");
-      let box = document.getElementById("box");
-
-      resize.onmousedown = function(e) {
-        let startX = e.clientX;
-        console.log('startX---', startX)
-        resize.left = resize.offsetLeft;
-        console.log('resize.left---', resize.left)
-        document.onmousemove = function(e) {
-          let endX = e.clientX;
-          let moveLen = resize.left + (endX - startX);
-          let maxT = box.clientWidth - resize.offsetWidth;
-          if (moveLen < 100) moveLen = 100;
-          //   if (moveLen > maxT - 800) moveLen = maxT - 800
-          resize.style.left = moveLen;
-          left.style.width = moveLen + "px";
-          right.style.width = box.clientWidth - moveLen - 5 + "px";
-        };
-        document.onmouseup = function() {
-          document.onmousemove = null;
-          document.onmouseup = null;
-          resize.releaseCapture && resize.releaseCapture();
-        };
-        resize.setCapture && resize.setCapture();
-        return false;
-      };
+    flatten(arr) {
+      return [].concat(...arr.map(item => {
+        if (item.children) {
+          let arr = [].concat(item, ...this.flatten(item.children));
+          delete item.children;
+          return arr;
+        }
+        return [].concat(item);
+      }
+      ));
     },
+    handleNodeClick(data, self, child) {
+      console.log('data', data)
+      this.labelData = data.label;//展示部分
+      this.valueData = data.id;//传参---id
+    }
   },
 };
 </script>
-
-<style scoped>
-.bigbox {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-#box {
-  flex: 1;
-  width: 100%;
-  height: 500px;
-  position: relative;
-  display: flex;
-}
-
-#left {
-  width: calc(20% - 5px);
-  height: 100%;
-  overflow: auto;
-  border: 1px solid red;
-}
-
-#resize {
-  position: relative;
-  width: 5px;
-  height: 100%;
-  cursor: w-resize;
-}
-
-#right {
-  width: 80%;
-  height: 100%;
-  overflow: hidden;
-}
-.flex {
-  display: flex;
-  margin-bottom: 10px;
-  align-items: center;
+<style lang="scss">
+.setstyle {
+	min-height: 200px;
+	padding: 0 !important;
+	margin: 0;
+	overflow: auto;
+	cursor: default !important;
 }
 </style>
+<style lang="scss" scoped>
+</style>
 
-<style lang="scss" scoped></style>
